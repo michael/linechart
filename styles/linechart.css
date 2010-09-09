@@ -1,0 +1,47 @@
+#plotarea {
+  position: absolute;
+  left: 150px;
+  right: 150px;
+  top: 20px;
+  bottom: 50px;
+}
+
+#legend {
+  margin-top: 20px;
+  position: absolute;
+  right: 20px;
+  width: 120px;
+  height: 100px;
+}
+
+#legend .item {
+  margin-bottom: 10px;
+}
+
+#legend .item .color {
+  width: 20px;
+  height: 20px;
+  float: left;
+  
+  border-bottom-left-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+}
+
+#legend .item .label {
+  margin-left: 20px;
+  height: 20px;
+  float: left;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+#rulers {
+  position: absolute;
+  left: 20px;
+  right: 150px;
+  top: 20px;
+  bottom: 20px;
+  background: #fff;
+}
