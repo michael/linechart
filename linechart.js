@@ -109,7 +109,7 @@
       return this.active ? 4 : 3;
     });
     this.p('strokeStyle', colors(item.key).color);
-    this.p('transformMode', 'coords');
+    this.p('transformMode', 'origin');
     return item.values(prop.key).each(__bind(function(index, val) {
       var datapoint;
       this.p('points', function() {
@@ -130,7 +130,7 @@
         x: x(index),
         y: plotHeight,
         val: 'bla',
-        transformMode: 'coords'
+        transformMode: 'origin'
       }));
       datapoint.bind('mouseover', function() {
         return (this.parent.active = true);
@@ -153,7 +153,9 @@
       var val;
       val = y(item.values(prop.key).at(index));
       datapoint.p('val', formatter.format(item.values(prop.key).at(index)));
-      return datapoint.animate('y', val, 1000);
+      return datapoint.animate({
+        y: val
+      }, 1);
     }, this));
   };
   Linechart = function(_a, _b) {

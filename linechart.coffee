@@ -79,7 +79,7 @@ class Line extends uv.Path
     @p 'lineWidth', ->
       if @active then 4 else 3
     @p('strokeStyle', colors(item.key).color)
-    @p('transformMode', 'coords')
+    @p('transformMode', 'origin')
     
     item.values(prop.key).each (index, val) =>
       @p 'points', ->
@@ -99,7 +99,7 @@ class Line extends uv.Path
         x: x(index)
         y: plotHeight
         val: 'bla'
-        transformMode: 'coords'
+        transformMode: 'origin'
       }))
       
       datapoint.bind 'mouseover', ->
@@ -118,7 +118,7 @@ class Line extends uv.Path
     @all('children').each (index, datapoint) =>
       val = y(item.values(prop.key).at(index))
       datapoint.p('val', formatter.format(item.values(prop.key).at(index)))
-      datapoint.animate('y', val, 1000)
+      datapoint.animate({y: val}, 1)
 
 # Linechart
 # ==============================================================================
