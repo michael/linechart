@@ -162,6 +162,7 @@
     this.params = _b;
     this.collection = _a;
     this.prop = this.collection.get('properties', this.params.property);
+    this.canvas = this.params.canvas || '#canvas';
     this.updateMinMax();
     this.categoryIndex = null;
     this.build();
@@ -261,7 +262,7 @@
     }, this));
   };
   Linechart.prototype.build = function() {
-    $('#canvas').html('<div id="rulers"></div><div id="plotarea"></div><div id="legend"></div>');
+    $(this.canvas).html('<div id="rulers"></div><div id="plotarea"></div><div id="legend"></div>');
     this.margin = 25;
     this.plotWidth = $('#plotarea').width() - 0;
     this.plotHeight = $('#plotarea').height() - 3;

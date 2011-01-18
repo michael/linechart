@@ -126,6 +126,7 @@ class Line extends uv.Path
 class Linechart
   constructor: (@collection, @params) ->    
     @prop = @collection.get('properties', @params.property)
+    @canvas = '#canvas'
     @updateMinMax()
     @categoryIndex = null
     @build()
@@ -211,8 +212,8 @@ class Linechart
           </div>");
 
   build: ->
-    $('#canvas').html('<div id="rulers"></div><div id="plotarea"></div><div id="legend"></div>')
-    
+    $(@canvas).html('<div id="rulers"></div><div id="plotarea"></div><div id="legend"></div>')
+    console.log('built.')
     @margin = 25
     @plotWidth = $('#plotarea').width() - 0
     @plotHeight = $('#plotarea').height() - 3
